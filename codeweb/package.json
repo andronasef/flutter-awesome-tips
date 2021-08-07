@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "node ./gh.ts",
     "serve": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
