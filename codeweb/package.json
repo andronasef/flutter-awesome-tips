@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "node ./gh.ts",
     "serve": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "@octokit/core": "^3.5.1",
+    "gh-pages": "^3.2.3",
     "highlight.js": "^11.2.0",
     "i": "^0.3.6",
     "markdown-it": "^12.2.0",

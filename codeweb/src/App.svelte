@@ -23,7 +23,7 @@
         '<p class="end">It Not The End. New Tips Will Be Published Soon</p>'
     else {
       count++
-      fetch(`/tips/${count}.html`)
+      fetch(`tips/${count}.html`)
         .then((r) => r.text())
         .then((tip) => (mysource = tip))
     }
