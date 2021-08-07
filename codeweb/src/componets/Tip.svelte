@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="flex flex-col h-full space-y-5 w-full px-[5%] pt-[5%] pb-10 items-center justify-center md:px-[15%]"
+  class="flex flex-col h-full space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
 >
   {@html mysource}
   <style lang="scss">
