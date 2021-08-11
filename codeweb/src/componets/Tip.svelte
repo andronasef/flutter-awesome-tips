@@ -1,11 +1,11 @@
 <script lang="typescript">
-  export let mysource
+  export let html
 </script>
 
 <div
-  class="flex flex-col h-full space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
+  class="flex flex-col h-full min-h-full space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
 >
-  {@html mysource}
+  {@html html}
   <style lang="scss">
     .end {
       @apply text-center  text-2xl md:text-4xl;

@@ -16,7 +16,7 @@
 </script>
 
 <header class="flex h-[80px] px-5 text-white/85 items-center">
-  <a href="/" class="flex">
+  <a href="/" class="flex justify-end items-center">
     <img
       src="flutterwhite.svg"
       alt="Flutter Logo"

@@ -17,13 +17,20 @@ export default defineConfig({
     ],
     theme: {
         extend: {
+            fontFamily: { "roboto": "Roboto" },
             colors: {
+                // THEME 1
                 mainbg: "#0F0F0F",
                 secondbg: "#373737"
+
+                // THEME 2
+                // mainbg: "#3D4451",
+                // secondbg: "#2A2E37"
+
+                // THEME 3
+                // mainbg: "#0F0F0F",
+                // secondbg: "#373737"
             }
-            // colors: {
-            //     secondbg: "#323741", mainbg: "#23242A"
-            // }
         }
     }
 })
