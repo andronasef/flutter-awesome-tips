@@ -6,7 +6,8 @@
   import Tip from './componets/Tip.svelte'
 
   let html = 'Loading'
-  onMount(() => {
+
+  function mark2html() {
     fetch(`/tips/${count}.md`)
       .then((r) => r.text())
       .then((mark) =>
@@ -25,14 +26,16 @@
           .then((r) => r.text())
           .then((rhtml) => (html = rhtml))
       )
+  }
+  onMount(() => {
+    mark2html()
   })
 
-  const counts = 2
   let count =
     localStorage.getItem('count') === null
       ? 1
       : parseInt(localStorage.getItem('count'))
-  onMount(() => {})
+  const counts = 2
 
   function next() {
     if (count == counts)
@@ -40,9 +43,7 @@
         '<p class="end">It Not The End. New Tips Will Be Published Soon</p>'
     else {
       count++
-      fetch(`tips/${count}.html`)
-        .then((r) => r.text())
-        .then((tip) => (html = tip))
+      mark2html()
     }
     localStorage.setItem('count', count.toString())
   }
@@ -50,7 +51,7 @@
 
 <main class="flex flex-col">
   <Header />
-  <FAB on:next{next} />
+  <FAB on:next={next} />
   <Tip {html} />
 </main>
 
