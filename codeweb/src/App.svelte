@@ -7,9 +7,7 @@
 
   let html = 'Loading'
   onMount(() => {
-    fetch(
-      `https://github.com/andronasef/FlutterAwesomeTips/raw/main/tips/${count}.md`
-    )
+    fetch(`/tips/${count}.md`)
       .then((r) => r.text())
       .then((mark) =>
         fetch('https://api.github.com/markdown', {
