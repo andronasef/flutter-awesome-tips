@@ -1,11 +1,12 @@
 <script lang="typescript">
-  export let html
+  export let source
+  import SvelteMarkdown from 'svelte-markdown'
 </script>
 
 <div
-  class="flex flex-col h-full min-h-full space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
+  class="flex flex-col space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
 >
-  {@html html}
+  <SvelteMarkdown {source} />
   <style lang="scss">
     .end {
       @apply text-center  text-2xl md:text-4xl;
@@ -25,12 +26,7 @@
       @apply bg-secondbg w-full text-base p-[2.5px] text-white rounded;
     }
     pre {
-      @apply p-2;
-      white-space: pre-wrap; /* Since CSS 2.1 */
-      white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-      white-space: -pre-wrap; /* Opera 4-6 */
-      white-space: -o-pre-wrap; /* Opera 7 */
-      word-wrap: break-word; /* Internet Explorer 5.5+ */
+      @apply p-2 whitespace-pre-wrap;
     }
   </style>
   <script></script>
