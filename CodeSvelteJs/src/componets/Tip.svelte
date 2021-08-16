@@ -6,11 +6,11 @@
 <div
   class="flex flex-col space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
 >
-{@html source}
+  {@html source}
   <!-- <SvelteMarkdown {source} /> -->
   <style lang="scss">
     .end {
-      @apply text-center  text-2xl md:text-4xl;
+      @apply flex-grow text-center  text-2xl md:text-4xl;
     }
     h1 {
       @apply text-2xl font-semibold;
