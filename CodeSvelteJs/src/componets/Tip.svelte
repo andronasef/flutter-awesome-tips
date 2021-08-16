@@ -1,12 +1,13 @@
-<script lang="typescript">
+<script>
   export let source
-  import SvelteMarkdown from 'svelte-markdown'
+  // import SvelteMarkdown from 'svelte-markdown'
 </script>
 
 <div
   class="flex flex-col space-y-5 w-full p-10 px-[5%] items-center justify-center md:px-[20%]"
 >
-  <SvelteMarkdown {source} />
+{@html source}
+  <!-- <SvelteMarkdown {source} /> -->
   <style lang="scss">
     .end {
       @apply text-center  text-2xl md:text-4xl;
