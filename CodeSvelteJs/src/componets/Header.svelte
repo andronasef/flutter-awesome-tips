@@ -1,11 +1,12 @@
 <script lang="ts">
   import Icon from '@iconify/svelte'
 
-  let links = [
-    ['Submit Tip', 'https://github.com/andronasef/FlutterAwesomeTips/issues'],
-    // ['All Tips', '/#'],
-  ]
+  // let links = [
+  //   ['Submit Tip', 'https://github.com/andronasef/FlutterAwesomeTips/issues'],
+  //   // ['All Tips', '/#'],
+  // ]
   let icons = [
+    ['mdi:lightbulb-on', '/all-tips'],
     [
       'ic:baseline-add',
       'https://github.com/andronasef/FlutterAwesomeTips/issues',
@@ -22,7 +23,9 @@
       alt="Flutter Logo"
       class="h-9 mr-4 transform transition ease-in-out w-9 rotate-0 duration-500 hover:rotate-360"
     />
-    <h1 class="font-extrabold text-white text-xl md:text-2xl">Flutter Tips</h1>
+    <h1 class="font-extrabold text-white text-xl hidden md:(text-2xl flex) ">
+      Flutter Tips
+    </h1>
   </a>
   <span class="ml-auto" />
   <!-- <div class="space-x-3 text-lg hidden md:flex">
