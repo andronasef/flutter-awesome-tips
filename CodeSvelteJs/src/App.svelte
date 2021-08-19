@@ -4,6 +4,7 @@
   import Header from './componets/Header.svelte'
   import Tip from './componets/Tip.svelte'
   import Footer from './componets/Footer.svelte'
+  import { slide } from 'svelte/transition'
 
   // Import markdown-hljs library
   import Markdown from 'markdown-hljs'
@@ -13,7 +14,7 @@
     localStorage.getItem('count') === null
       ? 1
       : parseInt(localStorage.getItem('count'))
-  let tipsCount = 100
+  const tipsCount = 100
   let markdown = 'Loading'
   $: markedDown = Markdown(markdown)
 
@@ -21,28 +22,34 @@
     mark2html()
   })
   function mark2html() {
-    fetch(`/tips/${count}.md`)
+    fetch(`./tips/${count}.md`)
       .then((r) => r.text())
       .then((mark) => {
         markdown = mark
       })
   }
 
-  function next() {
-    if (count == tipsCount)
-      markedDown =
-        '<p class="end">It Not The End. New Tips Will Be Published Soon</p>'
-    else {
-      count++
-      mark2html()
-    }
+  function nextOrBefore(e) {
+    // if (count == tipsCount)
+    //   markedDown =
+    //     '<p class="end">It Not The End. New Tips Will Be Published Soon</p>'
+    // else {
+    if (!e.detail.next) count++
+    else count--
+    mark2html()
+    // }
     localStorage.setItem('count', count.toString())
   }
 </script>
 
 <main class="flex flex-col h-full">
   <Header />
-  <FAB on:next={next} />
+  {#if count != tipsCount - 1}
+    <FAB on:next={nextOrBefore} />
+  {/if}
+  {#if count >= 2}
+    <FAB on:next={nextOrBefore} before={true} />
+  {/if}
   <Tip {markedDown} />
   <!-- <Footer /> -->
 </main>

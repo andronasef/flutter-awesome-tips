@@ -1,15 +1,17 @@
 <script>
   export let markedDown
-  // import SvelteMarkdown from 'svelte-markdown'
 </script>
 
 <div
   class="flex flex-col h-full  space-y-5  w-full p-10 px-[5%] items-center justify-center md:text-left md:px-[20%]"
 >
   {@html markedDown}
-  <!-- <SvelteMarkdown {source} /> -->
-  <style lang="scss">
+
+  <style lang="scss" scoped>
     @import 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github-dark-dimmed.min.css';
+    p > a {
+      color: #4169e1;
+    }
 
     .end {
       @apply flex-grow text-center text-2xl md:text-4xl;
@@ -27,14 +29,12 @@
     code,
     pre,
     .hljs {
-      @apply text-left bg-secondbg w-full text-base p-[2.5px] text-white rounded;
+      @apply text-left bg-secondbg w-full  text-base p-[2.5px] text-white rounded whitespace-pre-wrap;
     }
     pre {
-      @apply p-2 whitespace-pre-wrap;
+      @apply p-2;
     }
   </style>
-  <script></script>
 </div>
 
-<style lang="scss">
-</style>
+<style></style>

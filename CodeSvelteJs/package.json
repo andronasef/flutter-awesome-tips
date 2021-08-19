@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
+    "build & serve": "vite build;vite preview;",
+    "build & deploy": "vite build; node gh.ts;",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
