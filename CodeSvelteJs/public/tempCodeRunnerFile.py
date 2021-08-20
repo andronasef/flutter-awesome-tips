@@ -1,1 +1,0 @@
-os.listdir("/run/media/andro/p/Andrew/Desktop/Dev/Web/AwesomeFlutterTips/CodeSvelteJs/public/tips")

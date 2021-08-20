@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
   import FAB from './componets/FAB.svelte'
   import Header from './componets/Header.svelte'
@@ -14,11 +14,15 @@
     localStorage.getItem('count') === null
       ? 1
       : parseInt(localStorage.getItem('count'))
-  const tipsCount = 100
+  let tipsCount
   let markdown = 'Loading'
   $: markedDown = Markdown(markdown)
 
-  onMount(() => {
+  onMount(async () => {
+    await fetch('./tips.json')
+      .then((r) => r.json())
+      .then((json) => (tipsCount = Object.keys(json).length + 1))
+    console.log(tipsCount)
     mark2html()
   })
   function mark2html() {
@@ -30,10 +34,6 @@
   }
 
   function nextOrBefore(e) {
-    // if (count == tipsCount)
-    //   markedDown =
-    //     '<p class="end">It Not The End. New Tips Will Be Published Soon</p>'
-    // else {
     if (!e.detail.next) count++
     else count--
     mark2html()
