@@ -6,7 +6,7 @@
   //   // ['All Tips', '/#'],
   // ]
   let icons = [
-    ['mdi:lightbulb-on', '/all-tips'],
+    // ['mdi:lightbulb-on', '/all-tips'],
     [
       'ic:baseline-add',
       'https://github.com/andronasef/FlutterAwesomeTips/issues',
