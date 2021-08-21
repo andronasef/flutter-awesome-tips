@@ -4,6 +4,7 @@
     <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
 </a>
 
+<br/>
 
 First 100 Tips From [Erluxman](https://github.com/erluxman/awesomefluttertips)
 
